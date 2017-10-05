@@ -1,6 +1,7 @@
 ```
 #set up
 cp treasure_island.orig.tif treasure_island.tif
+rm treasure_island_warped.tif
 
 #Apply overviews to ungeoreferenced raster
 gdaladdo -r average treasure_island.tif 2 4 8 16
