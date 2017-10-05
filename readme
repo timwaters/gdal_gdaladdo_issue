@@ -9,7 +9,7 @@ gdal_rasterize -i  -b 1 -b 2 -b 3 -burn 17 -burn 17 -burn 17  20.gml -l features
 
 #Georeference the raster
 gdal_translate -a_srs '+init=epsg:4326' -of VRT treasure_island.tif temp.vrt  -gcp 100.38, 83.096, -122.377, 37.830 -gcp 430.1966, 370.08, -122.363, 37.8207 -gcp 313.69, 61.68, -122.368, 37.831
-gdalwarp -rn  -dstalpha  -s_srs 'EPSG:4326' temp.vrt treasure_island_warped.tif -co TILED=YES -co COMPRESS=LZW
+gdalwarp -rn  -dstalpha -srcnodata '17 17 17' -s_srs 'EPSG:4326' temp.vrt treasure_island_warped.tif -co TILED=YES -co COMPRESS=LZW
 
 #Apply overviews to georeferenced raster
 gdaladdo -r average treasure_island_warped.tif 2 4 8 16
