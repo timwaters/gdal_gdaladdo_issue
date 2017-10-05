@@ -33,3 +33,7 @@ With average:
 With nearest:
 
  ![correct](observed_nearest_correct.png)
+
+
+Showing what it looks like in mapwarper
+ ![](in_mapwarper.png)
