@@ -25,7 +25,10 @@ gdaladdo -r nearest treasure_island_warped.tif 2 4 8 16
 Screenshots from Gimp
 
 With average:
+
  ![wrong](observed_wrong.png)
  
+ 
 With nearest:
+
  ![correct](observed_nearest_correct.png)
