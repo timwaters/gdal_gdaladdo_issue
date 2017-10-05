@@ -1,3 +1,4 @@
+```
 #set up
 cp treasure_island.orig.tif treasure_island.tif
 
@@ -20,3 +21,4 @@ gdaladdo -r average treasure_island_warped.tif 2 4 8 16
 gdaladdo -r nearest treasure_island_warped.tif 2 4 8 16
 #Expected - transparent areas in overviews should be 17,17,17 with alpha of 0
 #Observed - transparent areas in overviews are 17,17,17 with alpha of 0
+```
