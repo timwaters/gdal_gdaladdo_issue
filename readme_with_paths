@@ -22,3 +22,8 @@ rm treasure_island_warped.tif
 #Expected - transparent areas in overviews should be 17,17,17 with alpha of 0
 #Observed - transparent areas in overviews are 17,17,17 with alpha of 0
 
+*** FIX ***
+
+add -dstnodata none to the gdalwarp call.
+
+/home/tim/work/warper/ubuntu16/gdal/install22/bin/gdalwarp -rn  -dstalpha -srcnodata '17 17 17' -dstnodata none -s_srs 'EPSG:4326' temp.vrt treasure_island_warped.tif -co TILED=YES -co COMPRESS=LZW
