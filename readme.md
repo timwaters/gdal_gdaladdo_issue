@@ -1,3 +1,7 @@
+A repo to help work out what was going on with a sequence of commands to add overviews to rasters.
+The **fix** was to add add `-dstnodata none` to the gdalwarp call. Thanks to Even Rouault, lead of the GDAL project for helping me with this.
+
+
 ```
 #set up
 cp treasure_island.orig.tif treasure_island.tif
@@ -37,3 +41,10 @@ With nearest:
 
 Showing what it looks like in mapwarper
  ![](in_mapwarper.png)
+
+ # FIX
+
+add -dstnodata none to the gdalwarp call.
+```
+gdalwarp -rn  -dstalpha -srcnodata '17 17 17' -dstnodata none -s_srs 'EPSG:4326' temp.vrt treasure_island_warped.tif -co TILED=YES -co COMPRESS=LZW
+```
